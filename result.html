@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+    />
+  </head>
+  <body>
+    <!-- <h1 class="text-center mt-2 text-dark">Result</h1>
+    <div class="container offset-2 col-8 offset-2 mt-5">
+      <div class="row">
+        <div class="col-3">
+          <h5>Name:</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="rname"></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Mobile Number :</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="rmobile"></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Date of Birth :</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="rdate"></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Email :</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="remail"></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Education :</h5>
+        </div>
+        <div class="col-6">
+          <h5>
+            <span id="ssc"></span>
+            <span id="hsc"></span>
+            <span id="graduate"></span>
+            <span id="postgraduate"></span>
+      
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Gender :</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="radio"><span id="male"></span><span id="female"></span></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Website :</h5>
+        </div>
+        <div class="col-6">
+          <h5 id="rwebsite"></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h5>Image :</h5>
+        </div>
+        <div class="col-6">
+          <img src="" id="rimg" alt="" />
+        </div>
+      </div>
+    </div> -->
+    <div class="container-fluid">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Email</th>
+            <th scope="col">Education</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Website</th>
+            <th scope="col">Image Upload</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="rname"></td>
+            <td id="rmobile"></td>
+            <td id="rdate"></td>
+            <td id="remail"></td>
+            <td id="">
+              <span id="ssc"></span><span id="hsc"></span
+              ><span id="graduate"></span><span id="postgraduate"></span>
+            </td>
+            <td id="radio"><span id="male"></span><span id="female"></span></td>
+            <td id="rwebsite"></td>
+            <td id="">
+              <img
+                src=""
+                id="rimg"
+                alt=""
+                style="width: 200px; height: 200px"
+              />
+            </td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener("load", () => {
+        const params = new URL(document.location).searchParams;
+        const name = params.get("name");
+        const mobile = params.get("mobile");
+        const date = params.get("datepicker");
+        const email = params.get("email");
+        const ssc = params.get("ssc");
+        const hsc = params.get("hsc");
+        const graduate = params.get("graduate");
+        const postgraduate = params.get("postgraduate");
+        const gender = params.get("gender");
+        const website = params.get("website");
+        const img = sessionStorage.getItem("formimg");
+        console.log(img);
+        document.getElementById("rname").innerHTML = name;
+        document.getElementById("rmobile").innerHTML = mobile;
+        document.getElementById("rdate").innerHTML = date;
+        document.getElementById("remail").innerHTML = email;
+        document.getElementById("ssc").innerHTML = ssc;
+        document.getElementById("hsc").innerHTML = hsc;
+        document.getElementById("graduate").innerHTML = graduate;
+        document.getElementById("postgraduate").innerHTML = postgraduate;
+
+        document.getElementById("radio").innerHTML = gender;
+        document.getElementById("rwebsite").innerHTML = website;
+        document.getElementById("rimg").setAttribute("src", img);
+        // document.getElementById("male").innerHTML = gender;
+        // document.getElementById("female").innerHTML = female;
+
+        // var rimg = document.getElementById("rimg")
+        // var a=localStorage.getItem("formimg")
+        // rimg.setAttribute("src",a)
+      });
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const img = sessionStorage.getItem(img);
+      //   if (img) {
+      //     document.getElementById("#rimg").setAttribute("src", img);
+      //   }
+      // });
+    </script>
+  </body>
+</html>
+<!-- // document.getElementById("rname").innerHTML = //
+sessionStorage.getItem("name"); // document.getElementById("rmobile").innerHTML
+= // sessionStorage.getItem("mobile"); //
+document.getElementById("rdate").innerHTML = // sessionStorage.getItem("date");
+// document.getElementById("rimg").innerHTML = // sessionStorage.getItem("img");
+// document.getElementById("rname").innerHTML = //
+sessionStorage.getItem("name"); // document.getElementById("rname").innerHTML =
+// sessionStorage.getItem("name"); //
+document.getElementById("rwebsite").innerHTML = //
+sessionStorage.getItem("website"); //
+document.getElementById("remail").innerHTML = //
+sessionStorage.getItem("email"); //
+document.getElementById("checkbox").innerHTML = //
+sessionStorage.getItem("checkbox"); //
+document.getElementById("radio").innerHTML = // sessionStorage.getItem("radio");
+// document.getElementById("male").innerHTML = sessionStorage.getItem("male");
+// document.getElementById("female").innerHTML = //
+sessionStorage.getItem("female"); // document.getElementById("ssc").innerHTML =
+sessionStorage.getItem("ssc"); // document.getElementById("hsc").innerHTML =
+sessionStorage.getItem("ssc"); // document.getElementById("graduate").innerHTML
+= // sessionStorage.getItem("graduate"); //
+document.getElementById("postgraduate").innerHTML = //
+sessionStorage.getItem("postgraduate"); -->

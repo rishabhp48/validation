@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../style1.css" />
+    <link
+      href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://use.fontawesome.com/7fcf0a16f5.js"></script>
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1 class="text-center">Form - Validator</h1>
+    </div>
+    <form action="../result.html" method="GET" id="form" class="">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12 offset-1" id="form-group1">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder=""
+            pattern="[ A-Z a-z]{6,32}"
+            required
+          />
+
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </div>
+        <div
+          class="form-group col-md-3 offset-1"
+          name="mobile"
+          id="form-group2"
+        >
+          <label for="mobile">Mobile</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mobile"
+            name="mobile"
+            pattern="[+][0-9].{9}|[0-9].{9}|[+][0-9].{11}|[0]+[0-9].{9}"
+            required
+          />
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+
+          <small></small>
+        </div>
+        <div class="form-group col-md-6 offset-1" id="form-group3">
+          <label for="date">Date of Birth</label>
+          <input
+            type="text"
+            class="form-control"
+            id="datepicker"
+            placeholder=""
+            pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
+            name="datepicker"
+            required
+          />
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </div>
+        <div class="form-group col-md-3 offset-1" id="form-group4">
+          <label for="mobile">Email Id :</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder=""
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+          />
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </div>
+        <div class="form-group col-md-6 offset-1" id="form-group5">
+          <label for="education" class="education">Education</label>
+          <div class="education1">
+            <!-- <span>SSC</span
+            ><input
+              type="checkbox"
+              value="ssc"
+              class="form-control"
+              id="ssc"
+              name="ssc"
+              placeholder=""
+            />
+
+            <span>HSC</span
+            ><input
+              type="checkbox"
+              value="hsc"
+              class="form-control"
+              id="hsc"
+              name="hsc"
+              placeholder=""
+            />
+            <span>Graduate</span
+            ><input
+              type="checkbox"
+              value="graduate"
+              class="form-control"
+              id="graduate"
+              name="graduate"
+              placeholder=""
+            />
+            <span>Post-Graduate</span
+            ><input
+              type="checkbox" 
+              value="postgraduate"
+              class="form-control"
+              id="postgraduate"
+              name="postgraduate"
+              placeholder=""
+            /> -->
+            <div class="form-check mb-4  " id="ssc1">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="ssc"
+                name="ssc"
+                value="ssc"
+                required
+                
+                />
+                <!-- onchange="if($(this).is(':checked')){$(this).removeAttr('required')} else if($(this).is(':unchecked')){$(this).attr('required')} else{ console.log('error');}"        -->
+
+              <label class="form-check-label" for="hsc">SSC</label>
+            </div>
+            <div class="form-check mb-4">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="hsc"
+                name="hsc"
+                value="hsc"
+                
+                required
+              />
+
+              <label class="form-check-label" for="ssc">HSC</label>
+            </div>
+            <div class="form-check mb-4">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="graduate"
+                name="graduate"
+                value="graduate"
+                required
+              />
+
+              <label class="form-check-label" for="ssc">Graduate</label>
+            </div>
+            <div class="form-check mb-4">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="postgraduate"
+                name="postgraduate"
+                value="postgraduate"
+                required
+              />
+
+              <label class="form-check-label" for="ssc">Post-Graduate</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-3 offset-1 gender" id="form-group6">
+          <label for="gender">Gender :</label>
+          <!-- <div class="education">
+            <label for="male" class="">Male</label>
+            <input
+              type="radio"
+              class="form-control"
+              id="male"
+              placeholder=""
+              name="gender"
+              value="male"
+            />
+            <label for="female" class="">Female</label
+            ><input
+              type="radio"
+              class="form-control"
+              id="female"
+              placeholder=""
+              name="gender"
+              value="female"
+            />
+          </div> -->
+          <div class="form-check gender-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="male-check"
+              name="gender"
+              value="male"
+              required
+            />
+            <label class="form-check-label" for="male">male</label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="female-check"
+              name="gender"
+              value="female"
+              required
+            />
+            <label class="form-check-label" for="female">female</label>
+          </div>
+        </div>
+        <div class="form-group col-md-6 offset-1" id="form-group7">
+          <label for="name">Website :</label>
+          <input
+            type="url"
+            class="form-control"
+            name="website"
+            id="website"
+            placeholder=""
+            pattern="http?://.+|https?://.+"
+            title="Include https://"
+            required
+          />
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </div>
+        <div class="offset-1 form-group col-md-3" id="form-group8">
+          <label for="mobile">Image Upload :</label>
+          <input
+            type="file"
+            class="form-control"
+            id="img"
+            name="img"
+            pattern="/.(jpeg|jpg|gif|png)$/"
+            placeholder=""
+            accept="image/*"
+            required
+          />
+          <!-- <img src=""  id="preview" alt="" style="width:200px;height: 200px;"> -->
+          <div class="invalid-feedback error">
+            <i class="fa fa-exclamation-circle"></i>
+          </div>
+          <div class="valid-feedback success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+        </div>
+        <div class="form-group offset-1 col-md-3">
+          <button class="btn btn-success">Submit</button>
+          <button type="reset" class="btn btn-danger">Clear</button>
+        </div>
+      </div>
+    </form>
+
+    <script></script>
+    <script>
+     
+      // document.querySelector("#img").addEventListener("change", function () {
+      //   const reader = new FileReader();
+      //   reader.addEventListener("load", function () {
+      //     preview.setAttribute("src", e.target.result);
+      //   });
+      //   reader.readAsDataURL(this.files[0]);
+      // });
+
+      var img = document.getElementById("img")
+      var preview = document.getElementById("preview");
+
+      img.addEventListener("change", function () {
+        changeImage(this);
+      });
+
+      function changeImage(input) {
+        var reader;
+
+        if (input.files && input.files[0]) {
+          reader = new FileReader();
+          reader.onload = function (e) {
+          //  console.log(e.target.result)
+           //preview.setAttribute("src",e.target.result)
+           sessionStorage.setItem("formimg",e.target.result)
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      
+      console.log(sessionStorage.getItem("formimg"))
+      
+      $(function () {
+        $("#name").on("focus", () => {
+          $("#form-group1").addClass("was-validated");
+        });
+        $("#name").on("focusout", () => {
+          $("#form-group1").removeClass("was-validated");
+        });
+        $("#mobile").on("focus", () => {
+          $("#form-group2").addClass("was-validated");
+        });
+        $("#mobile").on("focusout", () => {
+          $("#form-group2").removeClass("was-validated");
+        });
+        $("#datepicker").on("focus", () => {
+          $("#form-group3").addClass("was-validated");
+        });
+        $("#datepicker").on("focusout", () => {
+          $("#form-group3").removeClass("was-validated");
+        });
+        $("#email").on("focus", () => {
+          $("#form-group4").addClass("was-validated");
+        });
+        $("#email").on("focusout", () => {
+          $("#form-group4").removeClass("was-validated");
+        });
+        $("#male-check").on("focus", () => {
+          $("#form-group6").addClass("was-validated");
+        });
+        $("#male-check").on("focusout", () => {
+          $("#form-group6").removeClass("was-validated");
+        });
+        $("#female-check").on("focus", () => {
+          $("#form-group6").addClass("was-validated");
+        });
+        $("#female-check").on("focusout", () => {
+          $("#form-group6").removeClass("was-validated");
+        });
+        $("#website").on("focus", () => {
+          $("#form-group7").addClass("was-validated");
+        });
+
+        $("#website").on("focusout", () => {
+          $("#form-group7").removeClass("was-validated");
+        });
+        $("#img").on("focus", () => {
+          $("#form-group8").addClass("was-validated");
+        });
+        $("#img").on("focusout", () => {
+          $("#form-group8").removeClass("was-validated");
+        });
+      });
+
+ 
+
+
+
+document.addEventListener("change",()=>{
+  if($('[type="checkbox"]').is(':checked')){
+    $("[type='checkbox']").removeAttr("required")
+    $("#form-group5").addClass("was-validated");
+    
+  }
+  else if($('[type="checkbox"]').is(':unchecked')){
+    $("[type='checkbox']").attr("required")
+    $("#form-group5").addClass("was-validated");
+  }else{
+    console.log("error")
+  }
+})
+
+     
+      // var ssc = $("#ssc").val();
+      // var hsc = $("#hsc").val();
+      // var graduate = $("#graduate").val();
+      // var postgraduate = $("#postgraduate").val();
+      // if ((ssc.checked = true)) {
+      //   alert(val);
+      // }
+    </script>
+
+    <script>
+      $(function () {
+        $("#datepicker").datepicker({
+          minDate: new Date(1900, 1 - 1, 1),
+          maxDate: "-18Y",
+          dateFormat: "dd/mm/yy",
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-110:-18",
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- //       <script type="text/javascript"> -->
+
+  <!-- // //   const form = document.getElementById("form");
+  // //   const name = document.getElementById("name")
+  // //   const mobile = document.getElementById("mobile")
+  // //   const datepicker = document.getElementById("datepicker")
+  // //   const email = document.getElementById("email")
+  // //   const website = document.getElementById("website")
+  // //   const img = document.getElementById("img")
+
+  // //   form.addEventListener("",(e)=>{
+  //     e.preventDefault()
+  //     validate()
+  //   })
+
+  //   const validate = () =>{
+
+  //   const nameval = name.value.trim();
+  //   const mobileval =mobile.value.trim();
+  //   const datepickerval = datepicker.value.trim();
+  //   const emailval = email.value.trim();
+  //   const websiteval = website.value.trim();
+  //   const imgval = img.value.trim();
+
+  //   const above18= new Date().getFullYear()-18
+
+  //   if(!nameval.match(/^[a-zA-Z ]+$/) || nameval===""){
+  //     setError(name,"Name can contain only alphabets or Name can not be empty")
+  //   }else if(nameval.length<=4){
+  //     setError(name,"*** Name Should Be greater than 4 character ***")
+  //   }
+
+  //  else{
+  //   setSuccess(name)
+  //  }
+  //  if(mobileval.length!=10){
+  //   setError1(mobile,"Error..!!")
+  //  }
+  //  else{
+  //   setSuccess1(mobile)
+  //  }
+
+  //  if(emailval===""){
+  //   setError1(email,"Error..!")
+  //  }
+  //  else{
+  //    setSuccess1(email)
+  //  }
+  //  if(datepickerval===""){
+  //   setError(datepicker,"Error..!")
+  //  }
+  //  else{
+  //    setSuccess(datepicker)
+  //  }
+  //  if(websiteval===""){
+  //   setError(website,"Error ..!")
+  //  }
+  //  else{
+  //    setSuccess(website)
+  //  }
+  //  if(imgval=== "" ){
+  //   setError1(img,"Error ..!")
+  //  }
+  //  else{
+  //    setSuccess1(img)
+  //  }
+  //   }
+
+  //   function setError(input,errormsg){
+  //     const formGroup = input.parentElement
+  //     const small = formGroup.querySelector("small")
+  //     formGroup.className="form-group error col-md-6 offset-1"
+  //     small.innerHTML = errormsg
+
+  //   }
+  //   function setSuccess(input){
+  //     const formGroup = input.parentElement
+  //     formGroup.className="form-group success col-md-6 offset-1"
+
+  //   }
+
+  //   function setError1(input,errormsg){
+  //     const formGroup = input.parentElement
+  //     const small = formGroup.querySelector("small")
+  //     formGroup.className="form-group error col-md-3 offset-1"
+  //     small.innerHTML = errormsg
+
+  //   }
+  //   function setSuccess1(input){
+  //     const formGroup = input.parentElement
+  //     formGroup.className="form-group success col-md-3 offset-1"
+  
